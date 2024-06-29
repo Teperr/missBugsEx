@@ -4,14 +4,15 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon --ignore \"./data\" server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "omer teper",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "cookie-parser": "^1.4.6",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "follow-redirects": "^1.15.6"
   }
 }

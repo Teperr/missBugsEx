@@ -2,21 +2,25 @@
     background-color: var(--clr1);
     color: var(--clr2bg-light);
     
+    
 }
 
 .header-container {
     display: flex;
     align-items: center;
+    
 
 }
 
 .header-container h1 {
     flex-grow: 1;
+    margin-inline-start: 15px;
 }
 
 .app-nav {
     display: flex;
     gap: 15px;
+    margin-inline-end: 15px;
 }
 
 

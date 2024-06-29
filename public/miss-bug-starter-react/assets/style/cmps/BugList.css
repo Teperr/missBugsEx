@@ -1,15 +1,30 @@
-.car-list {
+.bug-list {
     padding: 15px 0 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
+    
 }
 
-.car-list li {
+.bug-list li {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background-color: var(--clr1bg);
+    border-radius: 72% 28% 76% 24% / 31% 69% 31% 69% ;
+    /* background-image: linear-gradient(to top, #d7dcc7, #c3d9c6, #aed5ca, #9dcfd3, #97c7db, #98c4db, #9ac2da, #9cbfd9, #9dc2d4, #a1c4ce, #a7c6ca, #afc7c6); */
+
+   
+}
+
+.remove-bug{
+    position: absolute;
+    top: -18px;
+    right: 20px;
+
+    border-radius: 50%;
+    border: 1px solid var(--clr1bg);
 }

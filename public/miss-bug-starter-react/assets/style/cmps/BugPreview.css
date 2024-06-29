@@ -1,16 +1,28 @@
-.car-preview {
+.bug-preview {
     text-align: center;
     padding: 0.3em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: red;
 }
 
-.car-preview h4 {
+.bug-preview h4 {
     text-transform: capitalize;
     color: black;
 }
 
-.car-preview img {
+.bug-preview img {
     max-width: 100px;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to right top, #a8b9d3, #b7c0d4, #c4c7d5, #cfcfd6, #d8d8d8);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main{
+    margin: 20px;
 }
