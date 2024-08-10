@@ -11,7 +11,7 @@ import { userService } from './services/user.service.js'
 const app = express()
 
 
-app.use(express.static('public/miss-bug-starter-react'))
+app.use(express.static('public'))
 app.use(cookieParser())
 app.use(express.json())
 
@@ -157,10 +157,10 @@ app.post('/api/auth/logout', (req, res) => {
 
 
 app.get('/**', (req, res) => {
-    res.sendFile(path.resolve('public/miss-bug-starter-react/index.html'))
+    res.sendFile(path.resolve('public/index.html'))
 })
 
 const PORT = process.env.PORT || 3030
-app.listen(port, () =>
+app.listen(PORT, () =>
     loggerService.info(`Server listening on port http://127.0.0.1:${PORT}/`))
 
