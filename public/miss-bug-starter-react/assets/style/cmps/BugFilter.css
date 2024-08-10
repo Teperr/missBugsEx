@@ -1,8 +1,18 @@
-.bug-filter {
+.bug-filter-container{
+
     background-color: var(--clr2bg);
+    padding: 20px;
+    margin: 20px 0;
+    color: var(--gray1);
+}
+
+.bug-filter {
+    border: 1px solid darkgray;
+
 }
 
 .bug-filter form {
-    display: grid;
-    grid-template-columns: 100px 200px;
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
 }

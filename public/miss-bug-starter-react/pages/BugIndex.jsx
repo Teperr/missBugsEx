@@ -2,6 +2,9 @@ import { bugService } from '../services/bug.service.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { BugList } from '../cmps/BugList.jsx'
 import { BugFilter } from '../cmps/BugFilter.jsx'
+import { BugEdit } from '../pages/BugEdit.jsx'
+
+const { Link } = ReactRouterDOM
 
 const { useState, useEffect } = React
 
@@ -16,7 +19,7 @@ export function BugIndex() {
     bugService.query(filterBy)
       .then(bugs => setBugs(bugs))
       .catch(err => console.log('err:', err))
-      console.log('filterBy:', filterBy)
+    console.log('filterBy:', filterBy)
   }, [filterBy])
 
   // function loadBugs() {
@@ -25,7 +28,7 @@ export function BugIndex() {
 
   function onSetFilterBy(filterBy) {
     setFilterBy(prevFilter => ({ ...prevFilter, ...filterBy }))
-}
+  }
 
   function onRemoveBug(bugId) {
     bugService
@@ -41,24 +44,24 @@ export function BugIndex() {
       })
   }
 
-  function onAddBug() {
-    const bug = {
-      title: prompt('Bug title?'),
-      severity: +prompt('Bug severity?'),
-      description: prompt('Bug description?'),
-    }
-    bugService
-      .save(bug)
-      .then((savedBug) => {
-        console.log('Added Bug', savedBug)
-        setBugs(prevBugs => [...prevBugs, savedBug])
-        showSuccessMsg('Bug added')
-      })
-      .catch((err) => {
-        console.log('Error from onAddBug ->', err)
-        showErrorMsg('Cannot add bug')
-      })
-  }
+  // function onAddBug() {
+  //   const bug = {
+  //     title: prompt('Bug title?'),
+  //     severity: +prompt('Bug severity?'),
+  //     description: prompt('Bug description?'),
+  //   }
+  //   bugService
+  //     .save(bug)
+  //     .then((savedBug) => {
+  //       console.log('Added Bug', savedBug)
+  //       setBugs(prevBugs => [...prevBugs, savedBug])
+  //       showSuccessMsg('Bug added')
+  //     })
+  //     .catch((err) => {
+  //       console.log('Error from onAddBug ->', err)
+  //       showErrorMsg('Cannot add bug')
+  //     })
+  // }
 
   function onEditBug(bug) {
     const severity = +prompt('New severity?')
@@ -82,9 +85,12 @@ export function BugIndex() {
     <main>
       <h3>Bugs App</h3>
       <main>
-        
         <BugFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
-        <button onClick={onAddBug}>Add Bug ⛐</button>
+        {/* <button onClick={onAddBug}>Add Bug ⛐</button> */}
+        {/* <Link to="/bug/edit" >Add Bug</Link> */}
+        <button><Link to={`/bug/edit`}>Add Bug</Link></button>
+        {/* <Link to={{ pathname: "/bug/edit", state: { setBugs } }}>Add Bug</Link> */}
+        {/* <BugEdit setBugs={setBugs} /> */}
         <BugList bugs={bugs} onRemoveBug={onRemoveBug} onEditBug={onEditBug} />
       </main>
     </main>

@@ -14,6 +14,7 @@
 @import "cmps/UserMsg.css";
 /* @import "cmps/ToggleButton.css"; */
 
+@import "cmps/BugIndex.css";
 @import "cmps/BugFilter.css";
 @import "cmps/BugList.css";
 @import "cmps/BugPreview.css";

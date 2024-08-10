@@ -1,6 +1,7 @@
 
 
 export function BugPreview({bug}) {
+    // console.log('bug:', bug)
 
     return <article>
         <h4>{bug.title}</h4>
